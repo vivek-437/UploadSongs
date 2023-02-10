@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "316240333168",
+    "project_id": "my-sangeet-player",
+    "storage_bucket": "my-sangeet-player.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316240333168:android:852fd26fb021d38525e7b5",
+        "android_client_info": {
+          "package_name": "com.example.upload_songs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316240333168-akskggjgnvtqdj414n8eeh2q311r51dr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN_Rzp1NwWHN21LOacC8R6tHcsS1IsOR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316240333168-akskggjgnvtqdj414n8eeh2q311r51dr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
