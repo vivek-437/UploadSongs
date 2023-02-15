@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 songsCategory=spinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(), "Selected"+songsCategory, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Selected "+songsCategory, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -119,9 +119,12 @@ public class MainActivity extends AppCompatActivity {
             TextimageView.setText(fileNames);
             mediaMetadataRetriever.setDataSource(this,audiouri);
             art=mediaMetadataRetriever.getEmbeddedPicture();
-            Bitmap bitmap= BitmapFactory.decodeByteArray(art,0,art.length);
-            album_art.setImageBitmap(bitmap);
-            album.setText(mediaMetadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM));
+            if (art!=null) {
+                Bitmap bitmap = BitmapFactory.decodeByteArray(art, 0, art.length);
+                album_art.setImageBitmap(bitmap);
+                album.setText(mediaMetadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUM));
+            }
+
             artist.setText(mediaMetadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST));
             dataa.setText(mediaMetadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_GENRE));
             durations.setText(mediaMetadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION));
@@ -157,8 +160,8 @@ public class MainActivity extends AppCompatActivity {
         return  result;
     }
     public  void uploadFileToFirebase(View v){
-        if(TextimageView.equals("No file Selected")){
-            Toast.makeText(this, "please select an image!", Toast.LENGTH_SHORT).show();
+        if(title.equals(null)){
+            Toast.makeText(this, "please add title to song", Toast.LENGTH_SHORT).show();
 
         }else{
             if(mUploadTask!=null&& mUploadTask.isInProgress()){
